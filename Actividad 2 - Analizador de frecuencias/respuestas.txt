@@ -1,0 +1,27 @@
+Módulo 4 - Clase 2 - Actividad 2
+Analizador de frecuencias
+
+Texto utilizado:
+Extracto del discurso de asunción presidencial de Claudia Sheinbaum, publicado en El Grand Continent el 1 de octubre de 2024.
+El fragmento elegido trata sobre el reconocimiento y la inclusión de las mujeres.
+
+Fuente:
+https://legrandcontinent.eu/es/2024/10/01/no-llego-sola-llegamos-todas-discurso-integro-de-posesion-de-claudia-sheinbaum/
+
+1. ¿Qué palabras aparecen en el top 10 de la Secuencia A pero desaparecen en la Secuencia B? ¿Por qué?
+
+En la secuencia A aparecen "que", "las", "y", "a", "la", "no", "de" y "su". Desaparecen en la secuencia B porque están incluidas en STOP_WORDS, la lista de palabras que el programa excluye del segundo conteo.
+
+Una vez que se excluyen del conteo las palabras incluidas en STOP_WORDS, entre las más frecuentes aparecen otras de contenido, que están relacionadas con el tema y nos permiten inferir un poco mejor de qué se trata, como "heroínas", "anónimas" y "lucharon".
+
+2. ¿Cambia el resultado al usar tokenizar() en lugar de un simple .split()?
+
+En este texto, las 10 palabras más frecuentes del ejercicio 1 coinciden con las 10 más frecuentes de la Secuencia A en el ejercicio 2. Sin embargo, el tratamiento de algunas palabras sí que cambia.
+
+.split() separa por espacios, pero conserva los signos pegados a las palabras. Por ejemplo, "anónimas," y "anónimas" se contarían por separado en el ejercicio 1.
+
+tokenizar() convierte el texto a minúsculas y elimina los signos definidos en string.punctuation antes de separarlo. Por eso reúne ambas formas como "anónimas", que entonces sí aparece en la Secuencia B del ejercicio 2 como palabra frecuente (3 veces).
+
+3. ¿Qué relación hay entre las líneas completadas? ¿Por qué se repite la lógica en el ejercicio 2?
+
+La línea completada en el ejercicio 1 abre el archivo para leerlo. Las dos líneas completadas en el ejercicio 2 cuentan las apariciones de las palabras, usando la misma lógica de conteo que ya estaba resuelta en el ejercicio 1. Esta lógica se repite porque se construyen dos diccionarios: uno con todas las palabras y otro que excluye las incluidas en STOP_WORDS.
